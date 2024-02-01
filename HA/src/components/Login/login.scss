@@ -1,0 +1,170 @@
+.container{
+    width: 1200px;
+    margin: auto;
+    height: 100vh;
+    overflow: inherit;
+    display: flex;
+    
+
+    .reg{
+        color: rgba(14, 14, 170, 0.926);;
+        width: 1;
+        padding: 10px ;
+        font-weight: 700;
+        animation:moveing 10s  infinite ;
+        display: block;
+        text-shadow: 1px 1px  rgb(31, 26, 27);
+
+        @keyframes moveing {
+            0%{
+                opacity: 0;
+              
+
+            }
+            30%{
+                opacity: 1;
+                
+            }
+            50%{
+                opacity: 0;
+                
+            }
+            100%{
+                opacity: 1;
+               
+            }
+            
+        }
+    }
+    h1{
+        color: rgb(77, 73, 88);
+        font-size:25px;
+        font-weight: 500;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    input{
+        width: 20em;
+        height: 2em;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        padding-left: 20px;
+        background-color: rgba(52, 41, 49, 0.195);
+        margin: 10px 10px;
+        color: black;
+        font-size: large;
+
+    }
+    .btn{ 
+        margin-left: 40px;
+    button{
+        font-weight: 700;
+        margin: 10px 10px;
+        width: 50%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgba(33, 225, 65, 0.83);
+        cursor: pointer;
+
+        
+        
+    }
+    button:hover{
+        scale: 1;
+        color:rgb(202, 241, 5) ;
+        background-color: rgb(39, 107, 167);
+        transition: 1s;
+    }
+}
+
+    .form1{
+        flex: 1;
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+        .crt1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(189, 233, 123, 0.683);
+            width: 100%;
+            height: 70%;
+            border-radius: 25px;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.341);
+            button{
+                width: 100%;
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+            p{
+                color: rgba(27, 27, 190, 0.843);
+                text-decoration: underline;
+                margin: 10px 10px;
+                cursor: pointer;
+            }
+            .btn{
+                margin-right: 80px;
+            }
+        }
+        .crt{
+            background-color: rgba(189, 233, 123, 0.683);
+            border-radius: 20px ;
+            width: 100%;
+            height: 80vh;
+            padding: 20px 30px;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.341);
+        }
+        .acc{
+            margin-top: 20px;
+            h2{ 
+            font-weight: 200;
+            font-size: small;
+
+            span{
+                font-size: medium;
+                font-weight: 600;
+                color: rgb(232, 41, 41);
+                text-decoration:underline;
+                cursor: pointer;
+                text-shadow: 1px 1px  rgb(31, 26, 27);
+            }
+        }
+    }
+    }
+    .f2{
+      
+        border-radius: 10px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+        align-items: center;
+
+        img{
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        h2{
+            color: gray;
+            font-size: 30px;
+        }
+
+        h1{
+        margin-left: 30px; 
+        font-size: 50px;
+        color: rgb(175, 129, 38);
+        }
+        .canva{
+            position: absolute;
+            top: 222px;
+            width: 70vw;
+            height: 70vh;
+        }
+    }
+}
+

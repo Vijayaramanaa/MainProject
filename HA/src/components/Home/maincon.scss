@@ -1,0 +1,95 @@
+.Section{
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(to right,#040461,#00012b);
+    overflow-y: hidden;
+   // background-image: url("light.png");////https://www.automatedbuildings.com/news/jun21/articles/allied/Home%20Automation%20and%20Control.jpg
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .cont{
+        width: 1200px;
+        margin: auto;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+        align-items: center;
+        color: aliceblue;
+        
+
+        h1{
+            font-size: 100px;
+            font-weight: bold;
+            text-shadow: 1px 1px 14px black;
+            animation:slide 2s linear;
+            z-index: 22;
+        }
+        p{
+            font-size: 30px;
+            width: 800px;
+            height: 200px;
+            text-align: center;
+            color: rgb(10, 182, 240);
+            text-shadow: 1px 1px 1px rgb(20, 3, 3);
+            background-color: rgba(0, 0, 0, 0.651);
+            padding: 30px ;
+            animation:slide 4s linear;
+            border-radius: 20px;
+            z-index: 22;
+            @keyframes slide {
+                from{
+                    opacity: 0;
+                    scale: 0.2;
+                }
+                to{
+                    opacity: 1;
+                    scale: 1;
+                }
+                
+            }
+
+
+        }
+        .arrow{
+            width: 40px;
+            height: 40px;
+            transform: rotate(180deg);
+            z-index: 22;
+            animation: updown 2s infinite linear;
+
+            @keyframes updown {
+
+                from{
+                    opacity: 0;
+                    
+                }
+                to{
+                    opacity: 1;
+                }
+                
+            }
+        }
+        
+        
+    }
+    .light{
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        left: 50px;
+        bottom: 50px;
+        z-index: 0;
+        
+    }
+    .iot2{
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        top: 100px;
+        right: 100px;
+        z-index: 1;
+        
+    }
+}
