@@ -1,17 +1,30 @@
 import React, { useState } from 'react'
-import { database } from '../Firebase/firebaseconfig';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../Firebase/firebaseconfig';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 function Login({setLr,lr}) {
+    const navigate = useNavigate()
     const [Email,setEmail] = useState("")
     const [password,setPassword] = useState("")
+    const toastOption =  {
+      position: "top-right", // Position of the toast
+      autoClose: 3000, // Auto-close duration in milliseconds
+      hideProgressBar: false, // Whether to hide the progress bar
+    }
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-          await auth.signInWithEmailAndPassword(Email, password);
-          console.log('Login successful');
+          await signInWithEmailAndPassword(auth,Email, password);
+          toast.success('Login successful',toastOption);
+          navigate("/")
+
         } catch (error) {
-          console.error('Login failed', error.message);
+          toast.error('Login failed',toastOption);
+          console.log(error.message)
         }
       };
   return (
@@ -36,6 +49,7 @@ function Login({setLr,lr}) {
         <div className='acc'>
             <h2>Create an Account? <span onClick={()=>setLr(!lr)}>Register</span></h2>
         </div>
+        <ToastContainer/>
         
 </div>
 </form>

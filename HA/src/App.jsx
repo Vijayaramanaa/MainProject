@@ -9,12 +9,12 @@ import Footer from './components/Footer/Footer.jsx'
 
 function App() {
   return(
-    <>
+    
     <Routes>
     <Route path='lg' element={<LoginForm/>}/>
     <Route path='/' element={<Home/>} />
     </Routes>
-    </>
+   
   )
 }
 

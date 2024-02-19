@@ -1,0 +1,104 @@
+.containers{
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient( circle 1080.6px at 10% 20%,  rgba(133,255,189,1) 10%, rgba(255, 251, 125, 0.863) 70.7% );
+    box-sizing: border-box;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    padding: 50px;
+    gap: 40px;
+
+    .ed{
+        width: 1000px;
+        text-align: end;
+
+        h1{
+            font-size: 100px;
+            color:transparent;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+
+            span{
+                color: #4e564e;
+            }
+        }
+
+    }
+    .tp{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bt{
+        height: auto;
+        display: grid;
+        grid-template-columns: 250px 250px 250px 250px 250px;
+        gap: 10px;
+    }
+}
+.li{
+    display: flex;
+    width: 200px;
+    height: 150px;
+    background-color: aquamarine;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 20px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 2s linear;
+
+    h1{
+        font-size: medium;
+
+        span{
+            color: gray;
+            font-weight: bolder;
+        }
+    }
+    .lit{
+        width: 70px;
+        height: 70px;
+        
+    }
+    
+}
+.temper{
+    width: 350px;
+    height: 150px;
+    background-color: #aee9f5;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .divo{
+        display: flex;
+        justify-content:space-around;
+        font-size: 20px;
+        font-weight: 200;
+        color: #948282;
+        
+        .ticon{
+            width: 40px;
+            height: 40px;
+            color: #f5474d;
+        }
+    }
+    .divt{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: #4e564e;
+
+    }
+}

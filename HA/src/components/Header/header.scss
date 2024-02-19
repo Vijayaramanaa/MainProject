@@ -65,7 +65,7 @@
 }
 }
 .logout{
-
+    z-index: 99999999;
     width: 100px;
     height: 100px;
     background-color: rgb(217, 227, 227);
@@ -118,6 +118,7 @@
         box-shadow: 2px 2px 20px rgb(53, 45, 45);
         cursor: pointer;
         font-weight: bold;
+        z-index: 100000;
     }
     button:hover{
         background-color: rgb(20, 199, 80);

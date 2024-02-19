@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useRef} from 'react'
 import './header.scss'
 import { useNavigate } from 'react-router-dom';
-import { database } from '../Firebase/firebaseconfig';
+import { auth } from '../Firebase/firebaseconfig';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,8 +15,8 @@ const Logout = () => {
       }
   const handleLogout = async () => {
     try {
-      await database.signOut();
-      toast.success('Logout successful',toastOption),navi("/lg");
+      await auth.signOut();
+      toast.success('Logout successful',toastOption),navi("/lg",{replace:true});
     } catch (error) {
       toast.error('Logout failed', toastOption);
     }

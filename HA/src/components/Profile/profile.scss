@@ -1,0 +1,75 @@
+form{
+    width: 1200px;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    overflow: hidden;
+
+    .Container{
+        width: 50%;
+        height: 50%;
+        background: rgb(195,34,46);
+        background-image: linear-gradient( 14.1deg,  rgba(249,255,182,1) 44.7%, rgb(216, 255, 145) 67.2% );
+         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-evenly;
+        box-shadow: -12px 2px 5px #4e4e5f;
+        border-radius: 40px;
+
+        .nana{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input{
+                outline: none;
+                border-radius: 15px;
+                text-align: center;
+                width: 200px;
+                height: 25px;
+                background-color: #759e7d;
+                
+            }
+            label{
+                color: rgb(232, 23, 44);
+                font-weight: 800;
+            }
+            .lab{
+                margin-left: 30px;
+            }
+            .int{
+                margin-left: 30px;
+                border-top-right-radius:0px ;
+                border-bottom-right-radius: 0px;
+            }
+            button{
+                width: 30px;
+                height: 25px;
+                background-color: rgb(88, 84, 84);
+                border-top-right-radius:10px ;
+                border-bottom-right-radius: 10px;
+                cursor: pointer;
+                border: none;
+            }
+
+        }
+        .btn{
+            width: 60px;
+            height: 30px;
+            border-radius: 10px ;
+            border: none;
+            background:#040237;
+            color: bisque;
+            cursor: pointer;
+
+        }
+        .btn:hover{
+            scale: 1.2;
+            transition: all 1s;
+        }
+    }
+}

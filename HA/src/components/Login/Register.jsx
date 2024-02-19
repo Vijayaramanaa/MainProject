@@ -3,8 +3,9 @@ import './login.scss'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {database} from "../Firebase/firebaseconfig";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {auth} from "../Firebase/firebaseconfig";
+import { createUserWithEmailAndPassword,updateProfile } from 'firebase/auth';
+import 'firebase/firestore';
 
 
 
@@ -38,9 +39,23 @@ function Register({lr,setLr}) {
             return false;
         }
          try {
-           await database.createUserWithEmailAndPassword(Mail,Password).then((res)=>{ localStorage.setItem("userDetails",JSON.stringify(res.user)), navigate("/")})
+             
+            const userCredential = await createUserWithEmailAndPassword(auth, Mail, Password);
+            const user =userCredential.currentUser;
+            // Update the displayName using updateProfile method
+           const dname =  await updateProfile(auth,{
+                displayName : Name,
+                
+            })
+             localStorage.setItem("userDetails", JSON.stringify(dname));
+            // Store user details in localStorage (consider more secure options)
+           console.log(dname.Name)
+           toast.success("Registration successfull",toastOption)
+          
         }catch (error){
-            toast.error(error.message,toastOption)
+            toast.error("Registration failed re-try again",error.message,toastOption);
+        }finally{
+            navigate("/");
         }
 
 
