@@ -6,6 +6,7 @@ import Profile from '../Profile/Profile'
 import Card from '../Profile/Card'
 import "./maincon.scss"
 import Room from '../UserRoom/Room'
+import CreateUser from '../Profile/CreateUser'
 
 
 function Home() {
@@ -16,17 +17,11 @@ function Home() {
       <Maincon/>
       </section>
       <section>
-        <Footer/>
-        </section>
-        <section>
-       <Card/>
-       </section>
-       <section>
-       <Profile/>
+        <CreateUser/>
       </section>
       <section>
-        <Room/>
-      </section>
+        <Footer/>
+        </section>
     </div>
   )
 }

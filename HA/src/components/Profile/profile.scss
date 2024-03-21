@@ -8,17 +8,21 @@ form{
     justify-content: center;
     color: aliceblue;
     overflow: hidden;
+    
+    
 
     .Container{
         width: 50%;
         height: 50%;
         background: rgb(195,34,46);
-        background-image: linear-gradient( 14.1deg,  rgba(249,255,182,1) 44.7%, rgb(216, 255, 145) 67.2% );
+        background-image: linear-gradient( 109.6deg, rgba(2,0,4,1) 11.1%,  rgba(102,51,153,1) 91.2% );
+      // background-image: linear-gradient( 14.1deg,  rgba(249,255,182,1) 44.7%, rgb(216, 255, 145) 67.2% );
+     //  background-image: linear-gradient( 179deg,  rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );
          display: flex;
         flex-direction: column;
         align-items: center;
         justify-content:space-evenly;
-        box-shadow: -12px 2px 5px #4e4e5f;
+        box-shadow: 1px 2px 5px #e2e2e6;
         border-radius: 40px;
 
         .nana{
@@ -31,7 +35,8 @@ form{
                 text-align: center;
                 width: 200px;
                 height: 25px;
-                background-color: #759e7d;
+                background-color: #09160c;
+                color: #f1f1fd;
                 
             }
             label{
@@ -49,7 +54,8 @@ form{
             button{
                 width: 30px;
                 height: 25px;
-                background-color: rgb(88, 84, 84);
+                color: whitesmoke;
+                background-color: rgb(18, 11, 11);
                 border-top-right-radius:10px ;
                 border-bottom-right-radius: 10px;
                 cursor: pointer;
@@ -71,5 +77,102 @@ form{
             scale: 1.2;
             transition: all 1s;
         }
+    }
+}
+.frm{
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(17, 5, 53);
+    //background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+    background-image: linear-gradient( 109.6deg,  rgba(102,51,153,1) 11.2%, rgba(2,0,4,1) 91.1% );
+    overflow: hidden;
+    
+    align-items:center;
+    gap: 50px;
+    position: relative;
+
+    .profile{
+        width: 200px;
+        height: 100px;
+        color: #e5ca7e;
+
+    }
+    .cancel{
+            position: absolute;
+            top: 20px;
+            right:20px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 20;
+            
+    }
+    .cancel:hover{
+        scale: 1.3;
+        
+    }
+    .stlight{
+        width: 100px;
+        height: 400px;
+        position: absolute;
+        left: 30px;
+        top: 100px;
+    }
+    .stlightR{
+        width: 100px;
+        height: 400px;
+        position: absolute;
+        right: 30px;
+        top: 100px;
+    }
+    .star{
+        height: auto;
+        width: auto;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+       animation:zoomi 2s ease 1s,zoomout 3.5s  infinite linear ;
+
+     /*  @keyframes zoomi {
+        0%{
+            opacity: 0;
+            transition-delay: 2s;
+        }
+        20%{
+            opacity: 0.5;
+            transform: rotate(120deg);
+            transition-delay: 5s;
+        }
+        50%{
+            opacity: 1;
+            
+        }
+        100%{
+            opacity: 0;
+        }
+       }
+       @keyframes zoomout {
+        0%{
+           scale: 1;
+           
+        }
+        20%{
+            scale: 0.5;
+           
+        }
+        50%{
+           scale: 1;
+           
+            
+        }
+        100%{
+            scale: 0.5;
+           
+        }
+       }*/
+
     }
 }

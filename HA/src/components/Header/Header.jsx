@@ -1,9 +1,10 @@
 import React,{useState,useEffect,useRef} from 'react'
 import './header.scss'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { auth } from '../Firebase/firebaseconfig';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Profile from '../Profile/Profile';
 
 const Logout = () => {
     
@@ -23,8 +24,8 @@ const Logout = () => {
   };
 
   return (
-    <div className='logout'>
-      <h1>Hello !</h1>
+    <div className='logout' >
+      <Link to="profile" ><h5>GO to Profile</h5></Link>
       <button onClick={handleLogout}>Logout</button>
       
     </div>
