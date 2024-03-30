@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
 
     section{
         width: 100vw;
@@ -25,6 +26,7 @@
         justify-content:space-evenly;
         align-items: center;
         color: rgb(237, 241, 244);
+       
         
         
 
@@ -100,5 +102,47 @@
         right: 100px;
         z-index: 1;
         
+    }
+}
+
+@media (max-width:768px) {
+    .Section{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        .cont{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            
+            
+            h1{
+                width: 100vw;
+                font-size: 60px;
+                text-align: center;
+            }
+            p{
+                width: 90vw;
+                height: auto;
+
+            }
+            
+
+        }
+        .light{
+            width: 200px;
+            height: 200px;
+            bottom: 40px;
+            left: 120px;
+            position: absolute;
+        }
+        .iot2{
+            width: 200px;
+            height: 200px;
+            top: 120px;
+            left: 100px;
+            position:absolute;
+        }
     }
 }

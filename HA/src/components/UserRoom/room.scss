@@ -74,6 +74,7 @@
     gap: 10px;
     cursor: pointer;
     transition: 2s linear;
+    margin-bottom: 10px;
 
     h1{
         font-size: medium;
@@ -162,31 +163,28 @@
 }
 }
 
-@media (max-width:430px) {
+@media (max-width:768px)  {
     .containers{
-        padding: 20px;
+       padding: 20px;
        width: 100vw;
        height: auto;
        display: flex;
        flex-direction: column;
        align-items: center;
        background-image: linear-gradient(182.5deg,rgb(35, 109, 39) 1%,rgb(220, 220, 17) 120%);
-       color: white;
        scroll-behavior: smooth;
        scroll-snap-type: mandatory;
        gap: 20px;
-       justify-content: space-around;
        flex-grow: 1;
       
 
        .ed{
-        flex: 0.5;
-        width: 100vw;
-        text-align:center;
-        word-wrap: wrap;
-
+            
         h1{
-
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             font-size: 50px;
             color:transparent;
             -webkit-text-stroke-width: 2px;
@@ -197,19 +195,18 @@
             }
         }
        }
-       .sepertor{
+       .seperator{
         display: flex;
         flex-direction:column;
-        justify-content:space-around;
+        justify-content:center;
         align-items: center;
-        gap: 5px;
+        gap: 20px;
+        
 
         .divsep{
-            width: 100vw;
-            height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            
             flex: 1;
             
 
@@ -229,8 +226,6 @@
             flex-direction: column;
             gap: 10px;
             flex-grow: 1;
-            background-color: #aee9f5;
-            border: 2px solid red;
         }
 
        }
@@ -273,25 +268,30 @@
     }  
     .controlbtn{
         display: flex;
-        flex:2;
         flex-direction:row;
         align-items: center;
-        justify-content:space-around;
+        justify-content:center;
         flex-wrap: wrap;
         gap: 20px;
         width: 80vw;
-        height: 40vh;
+        height: 50vh;
         padding: 40px 40px;
         border-radius: 25px;
         background: hsla(270, 94%, 25%, 1);
         background: linear-gradient(90deg, rgb(4, 124, 84) 0%, hsla(158, 94%, 49%, 1) 100%);
     
     
-    
+        .conbtn{
+            display: flex;
+            flex-direction: row ;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            
         button{
-            width: 60px;
-            height: 60px;
-            margin: 21px;
+            width: 80px;
+            height: 80px;
+            margin: 8px;
             border: none;
             border-radius: 20px;
             background-color: #012103;
@@ -309,6 +309,7 @@
             color: #2e0628;
             background-color:rgb(233, 213, 154) ;
         }
+    }
     }  
 
     .li{
@@ -328,6 +329,7 @@
         cursor: pointer;
         transition: 2s linear;
         flex-grow: 1;
+        margin-bottom: 10px;
     
         h1{
             font-size: medium;

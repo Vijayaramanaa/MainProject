@@ -27,6 +27,7 @@ function Card() {
         if(detail.Name && detail.Password && detail.Wifi != ""){
 
             try{
+                
                 await push(dbRef , detail);
                 setDetail({
                     Name : "",

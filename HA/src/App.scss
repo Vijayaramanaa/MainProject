@@ -9,10 +9,11 @@ html{
     font-family: "DM Sans",sans-serif;
 }
 body{
-    background-color:aliceblue ;
+   // background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
     color: rgb(23, 21, 21);
     height: 100vh;
     width: 100vw;
+    position: relative;
 }
 a{
     text-decoration: none;

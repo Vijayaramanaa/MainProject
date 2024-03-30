@@ -1,12 +1,22 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './login.scss'
 import { Canvas } from '@react-three/fiber'
 import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei'
 import Register from './Register'
 import Login from './Login'
+import { useNavigate } from 'react-router-dom'
 
 function LoginForm() {
   const [lr,setLr] = useState(false)
+  const navigate = useNavigate()
+  const data = localStorage.getItem("userDetails")
+  const userDt = JSON.parse(data)
+  useEffect(()=>{
+    if(userDt){
+      navigate("/")
+    }
+  },[])
+
   return (
     <div className='container'>
     {lr ? <Login setLr={setLr}lr={lr}/> : <Register setLr={setLr} lr={lr}/> }

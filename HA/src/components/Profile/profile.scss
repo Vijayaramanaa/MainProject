@@ -87,7 +87,7 @@ form{
     height: 100vh;
     background-color: rgb(17, 5, 53);
     //background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
-    background-image: linear-gradient( 109.6deg,  rgba(102,51,153,1) 11.2%, rgba(2,0,4,1) 91.1% );
+   // background-image: linear-gradient( 109.6deg,  rgba(102,51,153,1) 11.2%, rgba(2,0,4,1) 91.1% );
     overflow: hidden;
     
     align-items:center;
@@ -175,4 +175,12 @@ form{
        }*/
 
     }
+}
+@media (max-width:768px)  {
+        form{
+            .Container{
+                width: 90vw;
+                height: 50vh;
+            }
+        }
 }

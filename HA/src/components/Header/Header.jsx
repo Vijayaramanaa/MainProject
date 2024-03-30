@@ -18,6 +18,8 @@ const Logout = () => {
     try {
       await auth.signOut();
       toast.success('Logout successful',toastOption),navi("/lg",{replace:true});
+      localStorage.removeItem("userDetails")
+      navi("/lg")
     } catch (error) {
       toast.error('Logout failed', toastOption);
     }
@@ -34,6 +36,7 @@ const Logout = () => {
 
 
 function Header() {
+  
 
     const [showLogOut , setshowLogOut] = useState(false)
     const handClicked = ()=>{
@@ -42,7 +45,9 @@ function Header() {
  
 
   return (
+
     <header className='header' >
+     
         <div className='head'> 
         <div className='left'>
             <ul >
@@ -59,9 +64,11 @@ function Header() {
             <button onClick={()=>handClicked()}>Profile</button>
         </div>
         </div>
+        <button className='phone'> ^ </button>
         {showLogOut ? <Logout/>: null}
         <ToastContainer/>
-    </header>
+        </header> 
+  
   )
 }
 

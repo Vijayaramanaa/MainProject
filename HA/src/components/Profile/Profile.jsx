@@ -22,10 +22,10 @@ function Profile() {
 
     onAuthStateChanged(auth,(user)=>{
       if (user){
-      const email = user.email || "abc@gmail.com"
+      const email = user.email|| "abc@gmail.com"
       setDisplayemail(email);
-      }else{
-        setDisplayemail("email not found");
+      const displayName = user.displayName ||"email not found"
+      setDisplayName(displayName);
       }
     })
 
@@ -36,8 +36,8 @@ function Profile() {
         const snapshot = await get(refa);
         const value = snapshot.val();
           setData(value);
-          console.log(value)
-          setDisplayName(value.Name || "User")
+          
+        //  setDisplayName(value.Name || "User")
           setName(value.Name)
           
           

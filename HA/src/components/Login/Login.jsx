@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../Firebase/firebaseconfig';
 import { ToastContainer,toast } from 'react-toastify';
@@ -14,12 +14,17 @@ function Login({setLr,lr}) {
       autoClose: 3000, // Auto-close duration in milliseconds
       hideProgressBar: false, // Whether to hide the progress bar
     }
+    
 
     const handleLogin = async (e) => {
+      
         e.preventDefault();
         try {
-          await signInWithEmailAndPassword(auth,Email, password);
+          const userdetail = await signInWithEmailAndPassword(auth,Email, password);
           toast.success('Login successful',toastOption);
+          if(!localStorage.getItem("userDetails")){
+            localStorage.setItem("userDetails",JSON.stringify(userdetail))
+          }
           navigate("/")
 
         } catch (error) {
