@@ -168,3 +168,43 @@
     }
 }
 
+@media (max-width:768px) {
+    .container{
+        width: 90vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column-reverse;
+        overflow-x: hidden;
+        overflow-y: auto;
+        
+        
+
+        .reg{
+            width: 90vw;
+            height: 90vh;
+            flex: 1;
+            width: 100vw;
+            border-radius: 20px;
+          
+
+        }
+        input{
+            width: 300px;
+        }
+        .btn{
+        button{
+            width: 200px;
+        }
+    }
+        .f2{
+            flex: 1;
+
+            .canva{
+                bottom: 0;
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+    
+}

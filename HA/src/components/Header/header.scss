@@ -1,11 +1,12 @@
 .header{
     
     max-width: 100%;
+    height: 60px;
     overflow: hidden;
     padding:10px 10px ;
     background-color:rgba(12, 15, 13, 0.83);
     color: rgb(234, 160, 12);
-
+    
    .head{
     max-width: 1200px;
     margin: auto;
@@ -23,7 +24,7 @@
             text-shadow: 2px 2px 1px rgb(24, 1, 1);
         }
         li:hover{
-            color:black;
+            color:rgb(239, 234, 234);
             scale: 1.2;
             text-shadow: 2px 2px 4px rgb(133, 13, 169);
             
@@ -32,7 +33,7 @@
     }
     .middle{
         h1{ 
-            margin-right: 150px;
+            
             text-shadow: 2px 2px 2px rgb(8, 7, 7);
         }
         h1:hover{
@@ -52,22 +53,26 @@
             text-shadow: 2px 2px 1px rgb(23, 22, 25);
             background-color: transparent;
             border: none;
+            position: relative;
             
 
         }
         button:hover{
-            color:black;
+            color:rgb(241, 235, 235);
             scale: 1.2;
             text-shadow: 2px 2px 4px rgb(133, 13, 169);
         
     }
 }
 }
+.phone{
+    display: none;
+}
 }
 .logout{
-
-    width: 100px;
-    height: 100px;
+    
+    width: 10vw;
+    height: 20vh;
     background-color: rgb(217, 227, 227);
     display: flex;
     justify-content: center;
@@ -80,8 +85,8 @@
     top: 40px;
     right: 50px;
     bottom: 100px;
-    z-index: 0;
-    gap: 10px;
+    z-index: 1000;
+    gap: 20px;
     animation: ltor 1s linear;
     @keyframes ltor {
         0%{
@@ -101,6 +106,7 @@
         
     }
     h1{
+        z-index: 20000;
         font-size: medium;
         color: black;
         width: 80px;
@@ -118,10 +124,31 @@
         box-shadow: 2px 2px 20px rgb(53, 45, 45);
         cursor: pointer;
         font-weight: bold;
+        z-index: 100000;
     }
     button:hover{
         background-color: rgb(20, 199, 80);
         transition:1s ease-out;
         color: rgb(104, 7, 148);
     }
+    h5{
+        color: black;
+        font-weight:50px ;
+        cursor: pointer;
+    }
+    
+}
+@media (max-width:768px) {
+    .header{
+        
+       .left{
+        display: none;
+       }
+
+    }
+    .logout{
+        width: 8rem;
+        height: 6rem;
+    }
+    
 }

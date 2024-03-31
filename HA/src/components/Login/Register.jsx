@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './login.scss'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {database} from "../Firebase/firebaseconfig";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {auth} from "../Firebase/firebaseconfig";
+import { createUserWithEmailAndPassword,updateProfile } from 'firebase/auth';
+import 'firebase/firestore';
 
 
 
 function Register({lr,setLr}) {
+    
     const navigate = useNavigate();
+
     const toastOption =  {
         position: "top-right", // Position of the toast
         autoClose: 3000, // Auto-close duration in milliseconds
@@ -38,10 +41,27 @@ function Register({lr,setLr}) {
             return false;
         }
          try {
-           await database.createUserWithEmailAndPassword(Mail,Password).then((res)=>{ localStorage.setItem("userDetails",JSON.stringify(res.user)), navigate("/")})
+             
+            const userCredential = await createUserWithEmailAndPassword(auth, Mail, Password);
+            const user =userCredential.user;
+             await updateProfile(user,{
+                displayName : Name,
+                
+            })
+            localStorage.setItem("userDetails", JSON.stringify(user))
+            
+           console.log(user)
+           toast.success("Registration successfull",toastOption)
+          
         }catch (error){
-            toast.error(error.message,toastOption)
+            toast.error("Registration failed re-try again",error.message,toastOption);
+        }finally{
+            {
+                    navigate.push("/")
+                
+            }
         }
+        
 
 
     }
@@ -58,7 +78,7 @@ function Register({lr,setLr}) {
 </div>
 <div>
     <h1>Email</h1>
-    <input type='email' name='Email' placeholder='Emila' required value={form.Mail} onChange={(e)=>{setForm({...form,Mail : e.target.value})}}/>
+    <input type='email' name='Email' placeholder='Email' required value={form.Mail} onChange={(e)=>{setForm({...form,Mail : e.target.value})}}/>
 </div>
 <div>
     <h1>Password</h1>

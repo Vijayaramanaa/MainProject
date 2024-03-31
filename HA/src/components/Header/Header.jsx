@@ -1,9 +1,10 @@
 import React,{useState,useEffect,useRef} from 'react'
 import './header.scss'
-import { useNavigate } from 'react-router-dom';
-import { database } from '../Firebase/firebaseconfig';
+import { useNavigate,Link } from 'react-router-dom';
+import { auth } from '../Firebase/firebaseconfig';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Profile from '../Profile/Profile';
 
 const Logout = () => {
     
@@ -15,16 +16,18 @@ const Logout = () => {
       }
   const handleLogout = async () => {
     try {
-      await database.signOut();
-      toast.success('Logout successful',toastOption),navi("/lg");
+      await auth.signOut();
+      toast.success('Logout successful',toastOption),navi("/lg",{replace:true});
+      localStorage.removeItem("userDetails")
+      navi("/lg")
     } catch (error) {
       toast.error('Logout failed', toastOption);
     }
   };
 
   return (
-    <div className='logout'>
-      <h1>Hello !</h1>
+    <div className='logout' >
+      <Link to="profile" ><h5>GO to Profile</h5></Link>
       <button onClick={handleLogout}>Logout</button>
       
     </div>
@@ -33,6 +36,7 @@ const Logout = () => {
 
 
 function Header() {
+  
 
     const [showLogOut , setshowLogOut] = useState(false)
     const handClicked = ()=>{
@@ -41,7 +45,9 @@ function Header() {
  
 
   return (
+
     <header className='header' >
+     
         <div className='head'> 
         <div className='left'>
             <ul >
@@ -58,9 +64,11 @@ function Header() {
             <button onClick={()=>handClicked()}>Profile</button>
         </div>
         </div>
+        <button className='phone'> ^ </button>
         {showLogOut ? <Logout/>: null}
         <ToastContainer/>
-    </header>
+        </header> 
+  
   )
 }
 

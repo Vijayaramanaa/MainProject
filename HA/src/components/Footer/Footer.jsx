@@ -20,13 +20,13 @@ function Footer() {
            <ul> <a href={`mailto:${mailAddress}`}><li> Ajhay N</li> </a>
             <a href={`mailto:${mailAddress}`}><li> Vijayaramanaa L G</li></a>
             <a href={`mailto:${mailAddress}`}><li>Prasanth P</li></a>
-            <a href={`mailto:${mailAddress}`}><li>Rasool Sheriff </li></a> </ul>
+            <a href={`mailto:${mailAddress}`}><li>Rasool Sheriff K </li></a> </ul>
             <p>Any query contact us</p>
 
         </div>
         </div>
         <div className="dThree">
-            <h1>&copy;Copyright All Received {year} </h1>
+            <h1>&copy; Copyright All Rights Reserved {year} </h1>
         </div>
         
         </div>

@@ -1,15 +1,24 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import  {getAuth} from "firebase/auth"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { initializeApp } from "firebase/app";
+import  {getAuth} from "firebase/auth";
+import 'firebase/firestore';
+import "firebase/database"
+import { getDatabase } from "firebase/database";
+
+/*const firebaseConfig = {
+  apiKey: "AIzaSyByj9rW5VhSEy8lo4r6tVvzuBcZOcZZGy4",
+  authDomain: "home-automation-testing-1d160.firebaseapp.com",
+  databaseURL: "https://home-automation-testing-1d160-default-rtdb.firebaseio.com",
+  projectId: "home-automation-testing-1d160",
+  storageBucket: "home-automation-testing-1d160.appspot.com",
+  messagingSenderId: "231831970402",
+  appId: "1:231831970402:web:dc1c47b3ee4b17ff5de73b",
+  measurementId: "G-6T6CK6436Q"
+};*/
 const firebaseConfig = {
   apiKey: "AIzaSyAZ1Mh_VsmPkypnvKfOuN-59hUFPWyPDCI",
   authDomain: "homeauto-f3144.firebaseapp.com",
+  databaseURL: "https://homeauto-f3144-default-rtdb.firebaseio.com",
   projectId: "homeauto-f3144",
   storageBucket: "homeauto-f3144.appspot.com",
   messagingSenderId: "888383145805",
@@ -17,7 +26,7 @@ const firebaseConfig = {
   measurementId: "G-2180RC7N1D"
 };
 
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-export  const database = getAuth(app)
+export const app = initializeApp(firebaseConfig);
+export  const auth = getAuth(app)

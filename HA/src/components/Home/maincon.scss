@@ -1,12 +1,21 @@
 .Section{
+    
     width: 100%;
     height: 100%;
-    background-image:linear-gradient(to right,#040461,#00012b);
+   // background-image: radial-gradient( circle farthest-corner at 83.7% 4.3%,  rgb(104, 4, 102) 0%, rgba(15,51,92,1) 90% );
     overflow-y: hidden;
+    background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
    // background-image: url("light.png");////https://www.automatedbuildings.com/news/jun21/articles/allied/Home%20Automation%20and%20Control.jpg
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
+
+    section{
+        width: 100vw;
+        height: 100vh;
+        
+    }
 
     .cont{
         width: 1200px;
@@ -16,7 +25,9 @@
         flex-direction: column;
         justify-content:space-evenly;
         align-items: center;
-        color: aliceblue;
+        color: rgb(237, 241, 244);
+       
+        
         
 
         h1{
@@ -31,9 +42,9 @@
             width: 800px;
             height: 200px;
             text-align: center;
-            color: rgb(10, 182, 240);
+            color: rgb(240, 10, 209);
             text-shadow: 1px 1px 1px rgb(20, 3, 3);
-            background-color: rgba(0, 0, 0, 0.651);
+            background-color: rgba(0, 0, 0, 0.836);
             padding: 30px ;
             animation:slide 4s linear;
             border-radius: 20px;
@@ -80,7 +91,7 @@
         position: absolute;
         left: 50px;
         bottom: 50px;
-        z-index: 0;
+        z-index: 1;
         
     }
     .iot2{
@@ -91,5 +102,47 @@
         right: 100px;
         z-index: 1;
         
+    }
+}
+
+@media (max-width:768px) {
+    .Section{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        .cont{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            
+            
+            h1{
+                width: 100vw;
+                font-size: 60px;
+                text-align: center;
+            }
+            p{
+                width: 90vw;
+                height: auto;
+
+            }
+            
+
+        }
+        .light{
+            width: 200px;
+            height: 200px;
+            bottom: 40px;
+            left: 120px;
+            position: absolute;
+        }
+        .iot2{
+            width: 200px;
+            height: 200px;
+            top: 120px;
+            left: 100px;
+            position:absolute;
+        }
     }
 }
