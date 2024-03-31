@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useUserName } from '../useContaxt/UserName';
 import Card from './Card';
 import { Link } from 'react-router-dom';
 import "./user.scss";
+import { getDatabase,get,ref } from 'firebase/database';
+import { app } from '../Firebase/firebaseconfig';
 
 
 
 const RoomPg = ()=>{
-    const [name] = useUserName();
 
     return(
         <div className='romdiv'>
@@ -22,13 +23,25 @@ const RoomPg = ()=>{
     )
 }
 
-function CreateUser() {
+function CreateUser({mail}) {
     const [name] = useUserName();
+    const [val,setVal] = useState(null)
+
+    const getData = async()=>{
+        const database = getDatabase(app);
+        const dbRef = ref(database,`UserDetail/ajhay@gmail`);
+        const snap = await get(dbRef)
+        const value = snap.val()
+        setVal(value)
+    }
+    useEffect(()=>{
+        getData()
+    },[])
   return (
     <div className='usdiv'>
         <div>
         {
-            name ? <RoomPg/> : <Card/>
+            val ? <RoomPg/> : <Card mail={mail}/>
         }
         </div>
         </div>

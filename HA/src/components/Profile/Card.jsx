@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext, useEffect} from 'react'
 import { FaEye ,FaEyeSlash } from "react-icons/fa";
 import "./profile.scss";
 import { getDatabase, ref, push } from 'firebase/database';
@@ -7,30 +7,29 @@ import 'react-toastify/dist/ReactToastify.css';
 import {app} from "../Firebase/firebaseconfig";
 
 
-function Card() {
+function Card({mail}) {
    
     const [detail,setDetail] = useState({
-        Name : "",
         Wifi : "",
         Password :"",
     })
+    console.log(mail)
     const toastOption =  {
         position: "top-right", // Position of the toast
         autoClose: 3000, // Auto-close duration in milliseconds
         hideProgressBar: false, // Whether to hide the progress bar
-      }
+    }
       const handleSubmit = async(e)=>{
           e.preventDefault();
         const database = getDatabase(app);
-        const dbRef = ref(database,'UserDetail');
+        const dbRef = ref(database,`UserDetail/ajhay@gmail`);
 
-        if(detail.Name && detail.Password && detail.Wifi != ""){
+        if( detail.Password && detail.Wifi != ""){
 
             try{
                 
                 await push(dbRef , detail);
                 setDetail({
-                    Name : "",
                     Wifi : "",
                     Password : "",
                     
@@ -49,12 +48,7 @@ function Card() {
   return (
     <form onSubmit={(e)=>handleSubmit(e)}>
         <div className='Container'>
-        <div className='nana'>
-        <label >
-            Name
-        </label>
-        <input placeholder='Name' type='text' name='Name' value={detail.Name} onChange={(e)=>setDetail({...detail,Name:e.target.value})}/>
-        </div>
+
         <div className='nana'>
         <label>
             wifi Name or ID

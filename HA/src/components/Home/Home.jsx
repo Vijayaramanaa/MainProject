@@ -10,7 +10,7 @@ import CreateUser from '../Profile/CreateUser'
 import { useNavigate } from 'react-router-dom'
 
 
-function Home() {
+function Home({mail}) {
   const navi = useNavigate()
   useEffect(()=>{
     if(!localStorage.getItem("userDetails")){
@@ -25,7 +25,7 @@ function Home() {
       <Maincon/>
       </section>
       <section>
-        <CreateUser/>
+        <CreateUser mail={mail}/>
       </section>
       <section>
         <Footer/>

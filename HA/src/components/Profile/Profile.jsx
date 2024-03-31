@@ -8,23 +8,22 @@ import { MdCancel } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import stars from "../../../public/stars.png";
 import stlight from "../../assets/stlight.png";
-import {username,useUserName} from "../useContaxt/UserName"
+import {useUserName} from "../useContaxt/UserName"
 
 
 function Profile() {
-  const [name,setName] = useUserName();
   const [displayName,setDisplayName] = useState("")
   const [displayemail,setDisplayemail] = useState("")
-  const [data,setData] = useState({})
+  const [data,setData] = useState([])
 
   const history = useNavigate()
   useEffect(()=>{
 
     onAuthStateChanged(auth,(user)=>{
       if (user){
-      const email = user.email|| "abc@gmail.com"
+      const email = user.email|| "email not found"
       setDisplayemail(email);
-      const displayName = user.displayName ||"email not found"
+      const displayName = user.displayName ||"User"
       setDisplayName(displayName);
       }
     })
@@ -32,13 +31,15 @@ function Profile() {
     const fetchData = async()=>{
       try{
         const database =  getDatabase(app);
-        const refa = ref(database,"UserDetail/-NqppqS_RU0vSmj6q5Gh");
+        const refa = ref(database,"UserDetail/ajhay@gmail");
         const snapshot = await get(refa);
         const value = snapshot.val();
-          setData(value);
-          
-        //  setDisplayName(value.Name || "User")
-          setName(value.Name)
+        const ans = Object.entries(value).map(([key,val])=>({
+          key,
+          val
+        }))
+        
+          setData(ans);
           
           
 
@@ -49,6 +50,9 @@ function Profile() {
     fetchData();
 
   },[])
+  const name =  data.map((item)=>item.val.Wifi)
+  
+
   return (
     <form className='frm'>
       <div>
@@ -61,7 +65,7 @@ function Profile() {
         <h2>Email : {displayemail}</h2>
         </div>
         <div>
-         <h1>WIFI : {data? data.Wifi : "NA"} </h1> 
+        <h1>WIFI : {data? <>{name}</>:<>NA</>}</h1> 
         </div>
         <div onClick={()=>history(-1)}><MdCancel className='cancel' /></div>
         <img src={stlight} className='stlight'/>

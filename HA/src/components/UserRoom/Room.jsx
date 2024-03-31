@@ -9,6 +9,9 @@ import "./room.scss";
 import axios from 'axios';
 import { app } from '../Firebase/firebaseconfig';
 import { getDatabase, ref, push,get,update } from 'firebase/database';
+import { Link } from 'react-router-dom';
+import WBrBD from "../../../public/fzUl.gif"
+
 
 
 
@@ -162,13 +165,15 @@ useEffect(() => {
       
     };
   }, []);
-*/}
-
-
+*/} console.log(name || "vijay")  
   return (
-    <div className='containers'>
-      <div className='ed'>
-        <h1>Welcome <span>Vijay{name.toUpperCase()}</span></h1>
+    <div>
+      {loading? <div style={{height:"100vh",width:"100vw",overflow:"hidden", position:"relative"}}>
+        <img src={WBrBD} height={"100%"} width={"100%"} />
+        <h1 style={{position:"absolute",top:"100px",right:"300px",
+      color:"white",fontSize:"100px"}}>Loading...</h1> 
+      </div>:<div className='containers' > <div className='ed'>
+        <h1>Welcome <span> {name.toUpperCase()}</span></h1>
       </div>
       <div className='seperator'>
       <div >
@@ -180,10 +185,10 @@ useEffect(() => {
       </div>
       <div className='bt'>
         {loading ? (
-          <p>Loading...</p>
-             ) : error ? (
-          <p>Error: {error.message}</p>
-             ) : (
+          <div><h1>Loading Please wait</h1></div>
+          ) : error ? (
+            <p>Error: {error.message}</p>
+            ) : (
               <ul>
             {data.map(( item ) => (
               <div key={item.key}>
@@ -214,6 +219,8 @@ useEffect(() => {
       </div>
       <div>
       </div>
+      </div>
+      }
     </div>
 
   )
@@ -230,7 +237,7 @@ const AddDevice = ({addFan,addLight,setProps})=>{
         <button onClick={()=>setProps(addLight)}>LIGHT <HiLightBulb/></button>
         <button onClick={()=>setProps(addFan)}>FAN <PiFanFill/></button>
         <button>GasSensor</button>
-        <button>CamDetector</button>
+        <Link to={"/camera"}><button>CamDetector</button></Link>
       </div>
       </div>
     )
